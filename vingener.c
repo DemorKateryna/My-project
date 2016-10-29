@@ -4,20 +4,20 @@
 #include <string.h> 
     int main(int argc, string argv[]) 
 { 
-       //Кількість аргументів
+       //number of arguments
   if (argc != 2)  
 { 
     printf("Try again."); 
     return 1; 
 } 
-       //Зчитування рядка тексту 
+       //reading a line of text
     string key = argv[1]; 
   
     unsigned long keyCount = strlen(key); 
 
     for(int k = 0; k < keyCount; k++) 
 { 
-      //Перевірка, чи символ є буквою 
+      //check whether the character is a letter
   if (!isalpha(key[k])) 
 { 
     printf("Try again."); 
@@ -25,7 +25,7 @@
     return 1; 
 } 
 } 
-      //Отримання текстового рядка
+      //receiving a text string
     string text = GetString(); 
     
   if(text == NULL) 
@@ -34,17 +34,18 @@
     
     return 1; 
 } 
-     //Шифрування та отримання довжини рядка
+     //encryption and receiving line length
     for (int i = 0, n = 0; i < strlen(text); i++) 
 { 
-     //Перевірка, чи символ є літерою
+     //check whether the character is a letter
   if (isalpha(text[i])) 
 { 
-     //Перевірка, чи символ є великою літерою
+     //check whether the character is a big letter
   if (isupper(text[i])) 
   
     printf("%c", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A')); 
-     //Перевірка, чи символ є малою літерою
+
+     //check whether the character is a small letter
   if (islower(text[i])) 
    
     char small_letter = ((((text[i] - 'a') + ((tolower(key[n++%keyCount])) - 'a') % 26) % 26) + 'a');
