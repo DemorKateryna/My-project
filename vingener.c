@@ -12,7 +12,7 @@
 
     string key = argv[1]; 
   
-	unsigned long keyCount = strlen(key); 
+    unsigned long keyCount = strlen(key); 
 
     for(int k = 0; k < keyCount; k++) 
 { 
@@ -20,7 +20,7 @@
 { 
     printf("Try again."); 
     
-	return 1; 
+    return 1; 
 } 
 } 
 
@@ -30,25 +30,25 @@
 { 
     printf("Try again."); 
     
-	return 1; 
+    return 1; 
 } 
-
-   for (int i = 0, n = 0; i < strlen(text); i++) 
+  
+    for (int i = 0, n = 0; i < strlen(text); i++) 
 { 
   if (isalpha(text[i])) 
 { 
   if (isupper(text[i])) 
   
-	  printf("%c", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A')); 
+    printf("%c", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A')); 
   
   if (islower(text[i])) 
    
-	  printf("%c", ((((text[i] - 'a') + ((tolower(key[n++%keyCount]))-'a')%26) % 26) + 'a')); 
+    printf("%c", ((((text[i] - 'a') + ((tolower(key[n++%keyCount]))-'a')%26) % 26) + 'a')); 
 } else 
    
-      printf("%c", text[i]); 
+    printf("%c", text[i]); 
 } 
-      printf("\n"); 
+    printf("\n"); 
   
     return 0; 
 }
